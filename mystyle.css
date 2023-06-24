@@ -1,23 +1,15 @@
 /* all code just for the pictures */
 .picture{
     position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
 }
 
-figcaption{
-    text-align: center;
-}
-
-.picture figcaption{
+.pictures figcaption{
     position: absolute;
     top: 0;
     text-align: center;
-    align-content: center;
 }
-
-#gallery{
-    display: grid;
-}
-
 
 /* decoration for text and other */
 *{
@@ -71,6 +63,9 @@ label{
 
 footer{
     color: #ffff;
+    justify-self: center;
+    text-align: center;
+
 }
 
 p{
@@ -91,6 +86,7 @@ h1{
 
 h2{
     font-size: 2em;
+    text-align: center;
 }
 
 [href="#top"] {
@@ -101,46 +97,38 @@ h2{
     border: #000000;
   }
 
+aside{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+
+
 /* media screens */
 
-@media screen and(min-width: 485px){
-    #Gallery{
-        max-width: 485px;
-        grid-template-columns: 1fr;
-    }
-}
 
-@media screen and(min-width: 880px){
-    #gallery{
-        max-width: 880px;
-        grid-template-columns: 1fr 1fr;
-    }
-    .picture{
+@media screen and (min-width: 485px){
+    .pictures{
         display: grid;
-        position: absolute;
-        max-width: 1300px;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns:repeat(1, 1fr);
     }
 }
 
-@media screen and(min-width: 1300px){
-    #gallery{
-        max-width: 1300px;
-        grid-template-columns: 1fr 1fr 1fr;
-        position: absolute;
+@media screen and (min-width: 880px){
+    .pictures{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
-    .picture{
-        max-width: 1300px;
-        grid-template-columns: 1fr 1fr 1fr;
+    
+}
+
+@media screen and (min-width: 1300px){
+    .pictures{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
     }
-    ul li{
-        text-align: left;
-    }
-    nav{
-        justify-content: left;
-        text-align: left;
-    }
-    nav a{
-        text-align: left;
+    nav ul{
+        text-align: right;
     }
 }
